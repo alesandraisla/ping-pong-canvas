@@ -38,3 +38,14 @@ window.addEventListener('keyup', (event) => {
         teclado.baixo = false
     }
 })
+
+const game = () => {
+    //limpeza fica no principal
+    ctx.clearRect(0,0,canvas.width, canvas.height)
+
+    jogador.desenhar()
+    bola.desenhar()
+    requestAnimationFrame(game)
+}
+
+requestAnimationFrame(game)
