@@ -13,28 +13,28 @@ const bola = new Bola(ctx, jogador)
 
 
 window.addEventListener('keydown', (event) => {
-    if(event.keyCode == 37) {
+    if(event.key == "ArrowLeft") {
         teclado.esquerda = true
-    } else if (event.keyCode == 39) {
+    } else if (event.key == "ArrowRight") {
         teclado.direita = true
     }
 
-    if(event.keyCode == 38) {
+    if(event.key == "ArrowUp") {
         teclado.cima = true
-    } else if (event.keyCode == 40) {
+    } else if (event.key == "ArrowDown") {
         teclado.baixo = true
     }
 })
 
 window.addEventListener('keyup', (event) => {
-    if(event.keyCode == 37) {
+    if(event.key == "ArrowLeft") {
         teclado.esquerda = false
-    } else if (event.keyCode == 39) {
+    } else if (event.key == "ArrowRight") {
         teclado.direita = false
     }
-    if(event.keyCode == 38) {
+    if(event.key == "ArrowUp") {
         teclado.cima = false
-    } else if (event.keyCode == 40) {
+    } else if (event.key == "ArrowDown") {
         teclado.baixo = false
     }
 })
