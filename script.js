@@ -40,7 +40,6 @@ window.addEventListener('keyup', (event) => {
 })
 
 const game = () => {
-    //limpeza fica no principal
     ctx.clearRect(0,0,canvas.width, canvas.height)
 
     jogador.desenhar()
