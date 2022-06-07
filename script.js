@@ -1,5 +1,7 @@
 let canvas = document.getElementById('desenho1');
 let ctx = canvas.getContext('2d');
+let pontoJogador1 = 0
+let pontoJogador2 = 0
 
 const teclado = {
     cima: false,
@@ -11,7 +13,7 @@ const teclado = {
 const jogador = new Pad(ctx, teclado)
 const bola = new Bola(ctx, jogador)
 const cpu = new Cpu(ctx, bola)
-
+const placar = new Placar(ctx)
 
 window.addEventListener('keydown', (event) => {
     if(event.key == "ArrowLeft") {
@@ -46,6 +48,7 @@ const game = () => {
     jogador.desenhar()
     bola.desenhar()
     cpu.desenhar()
+    placar.desenhar()
     requestAnimationFrame(game)
 }
 

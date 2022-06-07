@@ -24,9 +24,11 @@ class Bola {
             this.y += (this.direcaoY * this.velocidade)
             if(this.x >= (this.ctx.canvas.width - this.largura)) {
                 this.direcaoX =- 1
+                pontoJogador1++
             }
             if(this.x <= 0) {
                 this.direcaoX = 1
+                pontoJogador2++
             }
             if(this.y >= (this.ctx.canvas.height - this.altura)) {
                 this.direcaoY =- 1
