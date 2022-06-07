@@ -14,8 +14,10 @@ class Bola {
 
     iniciar() {
         this.movendo = true
+        this.direcaoY = 0
+
         this.direcaoX =- 1
-        this.direcaoY = (Math.random()*10 > 5 ? -1 : 1)
+        // this.direcaoY = (Math.random()*10 > 5 ? -1 : 1)
     }
 
     gerenciar() {
@@ -25,10 +27,15 @@ class Bola {
             if(this.x >= (this.ctx.canvas.width - this.largura)) {
                 this.direcaoX =- 1
                 pontoJogador1++
+                this.resetarBola()
+                // para bolihna ir pro lado do jogador
+                this.direcaoX = -1
             }
             if(this.x <= 0) {
                 this.direcaoX = 1
                 pontoJogador2++
+                this.resetarBola()
+                this.direcaoX = 1
             }
             if(this.y >= (this.ctx.canvas.height - this.altura)) {
                 this.direcaoY =- 1
@@ -49,6 +56,15 @@ class Bola {
         }
     }
 
+    resetarBola() {
+        this.movendo = false
+        this.x =  (this.ctx.canvas.width/2) - (this.largura/2)
+        this.y = (this.ctx.canvas.height/2) - (this.altura/2)
+        jogador.x = 0
+        jogador.y = (this.ctx.canvas.height/2) - (jogador.altura/2)
+        cpu.x =(this.ctx.canvas.width - cpu.largura)
+        cpu.y = (this.ctx.canvas.height/2) - (cpu.altura/2)
+    }
     desenhar() {
         this.gerenciar()
         this.ctx.fillStyle= "navy"
