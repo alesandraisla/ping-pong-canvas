@@ -36,6 +36,13 @@ class Cpu {
                 this.x += this.velocidade
             }
         }
+        if(
+            (this.x <= this.bola.x + this.bola.largura && this.x + this.largura >= this.bola.x)&& 
+            (this.y + this.altura >= this.bola.y && this.y <= this.bola.y + this.bola.altura)
+        ){
+            this.bola.direcaoX = -1
+            this.bola.direcaoY = ((this.y + (this.altura/2)) - (this.bola.y + (this.bola.altura/2)))/16
+        }
     }
 
     desenhar() {

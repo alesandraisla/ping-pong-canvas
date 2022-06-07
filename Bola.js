@@ -38,7 +38,11 @@ class Bola {
                 (this.x <= this.jogador.x + this.jogador.largura && this.x + this.largura >= this.jogador.x)&& 
                 (this.y + this.altura >= this.jogador.y && this.y <= this.jogador.y + this.jogador.altura)
             ){
-                this.direcaoX *= -1
+                this.direcaoX = 1
+                this.direcaoY = ((this.y + (this.altura/2)) - (this.jogador.y + (this.jogador.altura/2)))/20
+                // this.direcaoX *= -1
+                //para nao colidir na parte traseira
+                // this.direcaoX *= +1
             }
         }
     }
