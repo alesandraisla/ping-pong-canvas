@@ -9,14 +9,15 @@ class Cpu {
         this.y = (this.ctx.canvas.height/2) - (this.altura/2)
         this.inicioX = this.x
         this.inicioY = this.y
+        this.yMeio = Math.random()*this.altura
     }
 
     gerenciar() {
         if(this.bola.direcaoX > 0 && this.bola.x > this.ctx.canvas.width/2 ) {
-            if(this.bola.y + (this.bola.altura/2) > this.y + (this.altura/2)){
+            if(this.bola.y + (this.bola.altura/2) > this.y + this.yMeio){
                 this.y += this.velocidade
             }
-            if(this.bola.y + (this.bola.altura/2) < this.y + (this.altura/2)){
+            if(this.bola.y + (this.bola.altura/2) < this.y + this.yMeio){
                 this.y -= this.velocidade
             }
             if((this.bola.x + this.bola.largura) < this.x) {
@@ -41,7 +42,8 @@ class Cpu {
             (this.y + this.altura >= this.bola.y && this.y <= this.bola.y + this.bola.altura)
         ){
             this.bola.direcaoX = -1
-            this.bola.direcaoY = ((this.y + (this.altura/2)) - (this.bola.y + (this.bola.altura/2)))/16
+            this.bola.direcaoY = ((this.bola.y + (this.bola.altura/2)) - (this.y + (this.altura/2)))/20
+            this.yMeio = Math.random()*this.altura
         }
     }
 
