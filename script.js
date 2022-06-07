@@ -10,6 +10,7 @@ const teclado = {
 
 const jogador = new Pad(ctx, teclado)
 const bola = new Bola(ctx, jogador)
+const cpu = new Cpu(ctx, bola)
 
 
 window.addEventListener('keydown', (event) => {
@@ -44,6 +45,7 @@ const game = () => {
 
     jogador.desenhar()
     bola.desenhar()
+    cpu.desenhar()
     requestAnimationFrame(game)
 }
 
